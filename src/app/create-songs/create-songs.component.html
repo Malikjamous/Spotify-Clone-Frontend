@@ -1,0 +1,63 @@
+<!-- get Create song Form to get User provided Data -->
+<div class="container container-songs">
+  <div class="row">
+    <h4>songs</h4>
+  </div>
+  <form [formGroup]="songsListForm">
+    <div>
+      <div class="row header-songs">
+        <label for="index">#</label>
+        <label for="name">Name</label>
+        <label for="name">Duration</label>
+      </div>
+      <div class="col-xs-12" formArrayName="songs" cdkDropList (cdkDropListDropped)="dropSongs($event)">
+        <div class="row container-songs-form new-songs" *ngFor="let songCtrl of controls; let i = index "
+          [formGroupName]="i" cdkDrag>
+          <div cdkDragHandle>
+            <img type='button' src="assets/menu-Line-S.svg" class="button-drop" />
+          </div>
+          <div class="col-xs-2">
+            {{i+1}}
+          </div>
+          <div class="col-xs-8">
+            <input type="text" class="form-control song-name" formControlName="name" />
+          </div>
+          <div class="col-xs-2">
+            <input type="time" class="form-control duration-song" formControlName="duration" />
+          </div>
+          <div class="col-xs-2">
+            <button (click)="onDeleteSong(i)" type="button" class="btn x-btn">x
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <form [formGroup]="songCreateForm" class="container-songs">
+    <div>
+      <div class="col-xs-12 container-form">
+        <div class="row container-songs-form">
+          <div class="col-xs-2">
+            <input max="index" formControlName="index" type="number" class="form-control index-song" />
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="name" type="text" class="form-control song-name" #songName />
+            <span style="position:absolute;" class="help-block alert-info" *ngIf="!songCreateForm.controls.name.valid">
+              name is required
+            </span>
+          </div>
+          <div class="col-xs-2">
+            <input formControlName="duration" type="time" class="form-control duration-song" />
+            <span style="position:absolute;" class="help-block alert-info"
+              *ngIf="!songCreateForm.controls.duration.valid">
+              duration is required
+            </span>
+          </div>
+          <div class="col-xs-2">
+            <button [disabled]="!songCreateForm.valid" (click)="onAddNewSong()" class="btn plus-btn">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

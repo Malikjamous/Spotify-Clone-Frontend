@@ -1,0 +1,27 @@
+<!-- all existing Favorite songs that user provide -->
+<img class="container-image">
+<div class="container">
+  <h4>Favorite</h4>
+  <hr />
+  <div class="row">
+    <div class="col col-xs-10">
+      <ul class="list-group">
+        <ng-container *ngFor="let song of favoriteSongsInfo; let i = index">
+          <a *ngIf="song.favSong.isFavorite" class="list-group-item">
+            <div class="pull-left">
+              <div class="col pull-to-right">
+                <button *ngIf="song?.favSong.isFavorite" (click)="onCancelFavorite(i)" type="button" class="icon-star">
+                  <img src="assets/star-Fill.svg" class="image-star" />
+                </button>
+              </div>
+              <h4 class="list-group-item-heading">{{ song?.favSong.name }}</h4>
+              <p class="list-group-item-text">
+                {{ song?.artist.name }} | {{ song?.album.name }} | {{ song?.favSong.duration }}
+              </p>
+            </div>
+          </a>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>

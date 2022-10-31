@@ -1,0 +1,42 @@
+<!-- get album details -->
+<img class="container-image">
+<div class="container">
+  <div style="display: flex">
+    <h3 type="button" (click)="onNavigateToArtistDetails()">{{ artist?.name }} ></h3>
+    <h3>{{ album?.name }}</h3>
+    <div class="col edit-album">
+      <button *ngIf="isUserRoleAndAlbumHasUserId ||isAdminRoleAndAlbumHasNoUserId" (click)="onEditAlbum()"
+        class="btn btn-dark">Edit album</button>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col col-xs-10">
+      <ul class="list-group">
+        <a *ngFor="let song of songs; let i = index" class="list-group-item">
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">{{ song?.index }} {{ song?.name }}</h4>
+            <p class="list-group-item-text">{{ song?.duration }}</p>
+            <div *ngIf="!isAdminRoleAndAlbumHasNoUserId" class="col pull-to-right">
+              <button *ngIf="song?.isFavorite" (click)="onCancelFavorite(i)" type="button" class="icon-star">
+                <p>Favorite:</p>
+                <img src="assets/star-Fill.svg" class="image-star" />
+              </button>
+              <button *ngIf="!song?.isFavorite" (click)="onAddToFavorite(i)" type="button" class="icon-star">
+                <p>Favorite:</p>
+                <img src="assets/star-Line-R.svg" class="image-star" />
+              </button>
+            </div>
+          </div>
+        </a>
+      </ul>
+    </div>
+    <div class="col details">
+      <span class="pull-right">
+        <img src="assets/musik.png" alt="musik" class="img-responsive" style="max-height: 100px" />
+      </span>
+      <p>Published: {{ album?.date | date }}</p>
+      <p>Description: {{ album?.description }}</p>
+    </div>
+  </div>
+</div>

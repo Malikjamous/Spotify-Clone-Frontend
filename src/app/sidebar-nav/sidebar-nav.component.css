@@ -1,0 +1,98 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+.sidenav {
+  height: 81.6%;
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  overflow-x: hidden;
+  background-color: #f8f9fa !important;
+  padding-top: 13px;
+  border-right: 1px solid #ededed;
+  border-bottom: 3px solid #ffc107;
+  padding-right: 10px;
+  width: 213px;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+.form-control {
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+.list-group-item {
+  border: 1.5px solid #dde0e2;
+}
+
+.btn-success {
+  background-color: white;
+  width: 160px;
+}
+.icon-star {
+  height: 30px;
+  padding: 0;
+  display: flex;
+  border: 0;
+}
+
+.image-star {
+  margin: 0;
+  width: 60px;
+  height: 100%;
+  margin-left: 10px;
+}
+.favorite-button {
+  padding: 0;
+  position: fixed;
+  padding-left: 30px;
+  bottom: 135px;
+}
+.add-artist-container {
+  position: fixed;
+  /* bottom: 2px; */
+  margin-left: 5px;
+  padding-top: 30px;
+  display: flex;
+}
+.arrow {
+  border: solid blue;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  left: 100px;
+  bottom: 52px;
+  position: fixed;
+  margin-bottom: 10px;
+}
+a.active {
+  border-right: 10px solid yellow;
+}
+.container-list {
+  position: fixed;
+  top: 0;
+}
+/* width: 170px; */
+.container-add-artist-text{
+  display: flex;
+  position: fixed;
+  bottom: 73px;
+}
+.add-artist-button{
+  position: fixed;
+  bottom: 10px;
+  left: 26px;
+}
+label{
+  font-size: 14px;
+}

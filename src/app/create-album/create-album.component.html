@@ -1,0 +1,63 @@
+<!-- get Create Album Form  to get User Data-->
+<img class="container-image">
+<div class="container">
+  <div>
+    <app-heading></app-heading>
+  </div>
+  <div class="row">
+    <div class="col col-xs-12">
+      <form class="album-form" [formGroup]="albumCreateForm">
+        <div>
+          <div>
+            <h4 class="heading-album-create-input">General</h4>
+          </div>
+          <div>
+            <div class="col-xs-12">
+              <div class="form-group artist-album-input">
+                <label for="Artist name">Album Name</label>
+                <input type="text" id="name" formControlName="name" class="form-control" />
+                <span class="help-block alert-info" *ngIf="!albumCreateForm.controls.name.valid"> album name is required
+                </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="col-xs-12">
+              <div class="form-group artist-album-input">
+                <label for="start">Release date</label>
+                <input type="date" formControlName="date" id="start" name="trip-start" min="1900-01-01"
+                  max="2020-08-00" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="col-xs-12">
+              <div class="form-group artist-album-input">
+                <label for="description">Description</label>
+                <textarea type="text" id="description" class="form-control" formControlName="description"
+                  rows="4"></textarea>
+                <span class="help-block alert-info" *ngIf="!albumCreateForm.controls.description.valid"> album
+                  description is
+                  required
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+      <app-create-songs #songForm [editMode]="editMode" [(songs)]="songList"></app-create-songs>
+    </div>
+  </div>
+  <div class="row flex-btn">
+    <div class="col">
+      <button (click)="onClear()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+    <div>
+      <button [disabled]="!albumCreateForm.valid || songList.length === 0" type="submit" (click)="onAddNewAlbum()"
+        class="btn btn-success btn-create">
+        {{ editMode ? 'Save' : 'Create' }} </button>
+    </div>
+  </div>
+</div>

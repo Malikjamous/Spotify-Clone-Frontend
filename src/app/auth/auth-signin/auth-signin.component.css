@@ -1,0 +1,12 @@
+.container-image {
+  width: 89%;
+  height: 100%;
+  position: fixed;
+  background-image: url('https://cutewallpaper.org/21/4k-music-wallpaper/Musical-Notes-UHD-4K-Wallpaper-Pixelz.jpg');
+  opacity: 0.5;
+  left: 213px;
+  bottom: 0;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

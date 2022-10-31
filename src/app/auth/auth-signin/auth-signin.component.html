@@ -1,0 +1,35 @@
+<h2>NEW HIRE ?</h2>
+<hr />
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+    <div *ngIf="isLoading" style="text-align: center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id="signin-email" class="form-control" ngModel name="email" required email
+          #email="ngModel" />
+        <span class="help-block alert-danger" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input autocomplete="off" type="password" id="signin-password" class="form-control" ngModel name="password"
+          required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #password="ngModel" />
+        <span class="help-block alert-danger" *ngIf="!password.valid && password.touched"> Must contain at least one
+          number and one uppercase and lowercase letter, and at least 8 or more characters!</span>
+      </div>
+      <div class="form-group">
+        <label for="repeat-password">Repeat password </label>
+        <input autocomplete="off" ngModel type="password" id="passwordRepeat" name="passwordRepeated"
+          class="form-control" required minlength="8" />
+      </div>
+      <div>
+        <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">SIGNIN</button>
+      </div>
+    </form>
+  </div>
+</div>

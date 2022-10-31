@@ -1,0 +1,117 @@
+.btn-success {
+  color: #fff;
+  background-color: #f5f8f6;
+  border-color: #28a745;
+  margin-right: 15px;
+  width: 125px;
+}
+.list-group-item-action {
+  color: #495057;
+  text-align: center;
+  position: relative;
+}
+
+.details {
+  border-left: 5px solid #1d2124;
+}
+
+.details p {
+  position: relative;
+  margin-top: 25px;
+  margin-left: 24px;
+}
+
+.list-group-item {
+  font-size: 10px;
+  margin-top: 16px;
+  display: flex;
+}
+img {
+  /* border: 10px solid #538fd0; */
+  margin-right: 20px;
+}
+
+.container {
+  top: 100px;
+  padding-left: 50px;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  padding: 3rem;
+}
+.albums-component {
+  margin-top: 25px;
+  margin-right: 150px;
+}
+hr {
+  border: 2px solid #212529;
+  width: 100%;
+  margin: 0;
+}
+.btn-artist {
+  display: flex;
+}
+.container-image {
+  bottom: 0;
+  width: 89%;
+  height: 100%;
+  position: fixed;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8uGTQkgt7MEREfAV5qyue-F-QZim8Hr_apQ&usqp=CAU);
+  opacity: 0.2;
+  left: 213px;
+}
+.button-drop{
+  width: 30px;
+  height: 23px;
+  margin: 10px;
+}
+/* .example-list {
+  width: 500px;
+  max-width: 100%;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  display: block;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.example-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+} */
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* .example-box:last-child {
+  border: none;
+} */
+
+/* .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+} */

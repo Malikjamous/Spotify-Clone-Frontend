@@ -1,0 +1,30 @@
+.container {
+  top: 100px;
+  background-color: #dcdcdc;
+  justify-content: center;
+  display: flex;
+  height: 40em;
+}
+img {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100px;
+}
+.container-image {
+  width: 89%;
+  height: 100%;
+  position: fixed;
+  background-image: url(https://comps.canstockphoto.at/instrumente-muster-musik-seamless-vektor-clipart_csp39216706.jpg);
+  opacity: 0.2;
+  left: 213px;
+  bottom: 0;
+}
+.container {
+  padding-left: 25px;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  background-color: #adb5bd;
+  margin: 0 auto;
+  padding: 3rem;
+}

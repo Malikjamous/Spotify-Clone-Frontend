@@ -1,0 +1,15 @@
+<!-- loop throw all Artist and Show all artists and if the User Search to provide one filter Artists in the list and  -->
+<div>
+  <h3 *ngIf="isUser">
+    Music Library
+  </h3>
+  <app-artist-item *ngFor="let artistEl of !searchInput ? globalArtists : searchedArtists" [artist]="artistEl">
+  </app-artist-item>
+</div>
+<div *ngIf="isUser">
+  <h3 *ngIf="isUser">
+    My Library
+  </h3>
+  <app-artist-item *ngFor="let artistEl of !searchInput ? artists : searchedArtists" [artist]="artistEl">
+  </app-artist-item>
+</div>

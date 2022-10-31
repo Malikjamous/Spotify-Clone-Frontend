@@ -1,0 +1,88 @@
+<!-- get Create artist Form to get User provided Data -->
+<img class="container-image">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="artistCreateForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="artist-title">
+            <h3>{{ editMode ? '/ Edit Artist ' : '/ Create a new Artist' }}</h3>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group artist-input">
+              <label for="Artist name">Artist Name</label>
+              <input type="text" id="name" formControlName="name" class="form-control" />
+              <span class="help-block alert-info" *ngIf="!artistCreateForm.controls.name.valid"> artist name is required
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-xs-12">
+            <div class="form-group artist-input">
+              <label for="description">Description</label>
+              <textarea type="text" id="description" class="form-control" formControlName="description" rows="3"
+                cols="20"></textarea>
+              <span class="help-block alert-info" *ngIf="!artistCreateForm.controls.description.valid"> artist
+                description is required
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-xs-12">
+            <div class="form-group artist-input">
+              <label for="genre">Genre:</label>
+              <select formControlName="genre" class="btn btn-primary">
+                <option value="rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="hip-hop">Hip-Hop</option>
+                <option value="rap">Rap</option>
+                <option value="alternative">Alternative</option>
+                <option value="reggae">reggae</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-xs-12">
+            <div class="form-group artist-input">
+              <label for="start">Founded In</label>
+              <input type="date" formControlName="startDate" id="start" name="trip-start" min="1900-01-01"
+                max="2020-08-00" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-xs-12">
+            <div *ngIf="!isArtistActive" class="form-group artist-input">
+              <label for="end">Dissolved</label>
+              <input formControlName="endDate" type="date" id="start" name="trip-end" min="1900-01-01"
+                max="2020-08-00" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col check-box">
+      <div class="col-xs-12">
+        <div class="form-group artist-checkbox">
+          <label class="container-checkbox">{{ isArtistActiveMessage }}
+            <input (click)="onCheckMarkActive()" type="checkbox" checked="checked" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row flex-btn">
+    <div style="padding-left: 0px" class="col">
+      <button (click)="onClear()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+    <div>
+      <button [disabled]="!artistCreateForm.valid" (click)="onSubmit()" type="submit"
+        class="btn btn-success btn-create">
+        {{ editMode ? 'Save' : 'Create' }}</button>
+    </div>
+  </div>
+</div>

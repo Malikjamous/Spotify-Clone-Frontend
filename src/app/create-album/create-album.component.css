@@ -1,0 +1,47 @@
+.form-control {
+  font-size: 12px;
+}
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.album-form {
+  display: flex;
+}
+.container {
+  top: 100px;
+  padding-left: 25px;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  padding: 3rem;
+}
+.flex-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.container-image {
+  bottom: 0;
+  width: 89%;
+  height: 100%;
+  position: fixed;
+  background-image: url(https://www.festivalsherpa.com/wp-content/uploads/2016/09/wallpapersafari.jpg);
+  opacity: 0.2;
+  left: 213px;
+}
+.btn-create{
+  width: 85px;
+}

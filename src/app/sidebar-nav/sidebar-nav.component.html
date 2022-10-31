@@ -1,0 +1,27 @@
+<!-- sidebar-nav list heir are all artists and the Search input and the button-->
+<div class="container-list">
+  <div class="sidenav">
+    <input [(ngModel)]="searchInput" (input)="onSearch()" class="form-control mr-sm-2" type="search"
+      placeholder="Search" aria-label="Search" />
+    <app-sidebar-list></app-sidebar-list>
+    <div class="btn-artist">
+      <div class="add-artist-container">
+        <div class="col favorite-button">
+          <a routerLinkActive="active" *ngIf="isFavoriteSongExist" [routerLink]="['favorite']" class="icon-star">
+            Favorites <img src="assets/star-Fill.svg" class="image-star" />
+          </a>
+        </div>
+        <div class="container-add-artist-text">
+          <label *ngIf="!isArtistExist" for="addArtist">Add an Artist By Clicking Here</label>
+          <i *ngIf="!isArtistExist" class="arrow down"></i>
+        </div>
+        <div class="add-artist-button">
+          <button (click)="onNewArtist()" routerLinkActive="active" type="button"
+            class="btn btn-success list-group-item-action btn-artist">
+            + Artist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

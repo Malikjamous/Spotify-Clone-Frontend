@@ -1,0 +1,44 @@
+<!-- get Artist Details -->
+<img class="container-image">
+<div class="container">
+  <div class="row">
+    <h3>{{ artist?.name }}</h3>
+    <div class="col edit-artist">
+      <button *ngIf="isUserRoleAndArtistHasUserId || isAdminRoleAndArtistHasNoUserId" (click)="onEditArtist()"
+        class="btn btn-dark">Edit artist</button>
+    </div>
+    <hr />
+    <div class="albums-component">
+      <div class="btn-artist">
+        <button *ngIf="isUserRoleAndArtistHasUserId || isAdminRoleAndArtistHasNoUserId" [routerLink]="['album-create']"
+          type="button" class="btn btn-success list-group-item-action">
+          Add Album
+        </button>
+        <select class="btn btn-primary" (change)="onSortList($event.target.value)" name="" id="">
+          <option value="new">newest first</option>
+          <option value="old">oldest first</option>
+        </select>
+      </div>
+      <div>
+        <a *ngFor="let album of artistAlbums" [routerLink]="['album', album.albumId]" style="cursor: pointer"
+          routerLinkActive="active" class="list-group-item clearfix">
+          <span class="pull-right">
+            <img src="assets/musik.png" alt="musik" class="img-responsive" style="max-height: 50px" />
+          </span>
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">{{ album.name }}</h4>
+            <p class="list-group-item-text">{{ album.date }}|{{ album.description }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col details">
+      <p>Genre:{{ artist?.genre }}</p>
+      <p>Founded In: {{ artist?.activeDate | date }}</p>
+      <p *ngIf="artist?.isActive">Artist still Active</p>
+      <p *ngIf="!artist?.isActive">Artist is not Active</p>
+      <p *ngIf="!artist?.isActive && artist?.dissolvedDate">Dissolved: {{ artist?.dissolvedDate | date }}</p>
+      <p>Description: {{ artist?.description }}</p>
+    </div>
+  </div>
+</div>
